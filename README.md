@@ -1,2 +1,2 @@
-# bots
-codes for all reddits bots for r/indiasocial
+# Reddit bot repository for ISO and Nostalgia
+
