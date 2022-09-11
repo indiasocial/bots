@@ -8,7 +8,7 @@ reddit = praw.Reddit(
     username="",
 )
 
-target_sub = "ISOCSS"
+target_sub = ""
 subreddit = reddit.subreddit(target_sub)
 trigger_phrase = "!flair"
 
