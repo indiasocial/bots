@@ -1,16 +1,7 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import praw
 import re
 import praw
 from psaw import PushshiftAPI
-
-
-# In[ ]:
 
 
 reddit = praw.Reddit(
@@ -28,25 +19,15 @@ usernameRegex = re.compile("/u/[A-Za-z0-9_-]+")
 MIN_COMMENTS = 20
 
 
-# In[ ]:
-
-
 for comment in subreddit.stream.comments(skip_existing=True):
     if trigger_phrase in comment.body:
         result = usernameRegex.search(comment.body)
         print(result)
 
-
-# In[ ]:
-
-
 api = PushshiftAPI(reddit)
 
 comments_generator = api.search_comments(after='7D', subreddit='indiasocial', limit=10) # Returns a generator object
 comment_list = list(comments_generator)
-
-
-# In[ ]:
 
 
 c = 0
@@ -58,13 +39,8 @@ for commentID in comment_list:
         c = c + 1
 
 
-# In[ ]:
-
-
 print(c)
 
-
-# In[ ]:
 
 
 
